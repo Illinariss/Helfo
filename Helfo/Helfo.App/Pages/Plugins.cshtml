@@ -1,0 +1,62 @@
+﻿@page "/plugins"
+
+@using Helfo.App.Models
+
+<h1>Ihre installierten Plugins!</h1>
+
+<div class="container">
+    <div class="row">
+        @if (pluginliste == null || pluginliste.Count < 1)
+        {
+            <div>Plugins werden geladen</div>
+        }
+        else
+        {
+            foreach (var plugin in pluginliste)
+            {
+            <div class="col-md-4">
+                <div class="card" style="@cardStyle">
+                    <img class="card-img-top" src="/asset/_No_Image__placeholder.png" />
+                    <div class="card-body">
+                        <h5 class="card-title">@plugin.Name</h5>
+                        <p class="card-text">@plugin.ShortDescription</p>
+                        <a href="#" class="btn btn-primary">Zum Plugin</a>
+                        <button class="btn btn-secondary" onclick="@(()=> deletePlugin(plugin.Id))">Deinstallieren</button>
+                    </div>
+                </div>
+            </div>
+            }
+        }
+        </div>
+    </div>
+
+    @functions {
+
+string cardStyle ="margin: 20px;";
+
+List<PluginMeta> pluginliste;
+        protected override void OnInit()
+        {
+        generatePlugins();
+        }
+        void deletePlugin(int id)
+        {
+        pluginliste.Remove(pluginliste.Where(p => p.Id.Equals(id)).FirstOrDefault());
+        }
+
+        async void generatePlugins()
+        {
+        var x = new List<PluginMeta>
+            ();
+            for (int i = 1; i < 5; i++)
+            {
+            x.Add(new PluginMeta(){
+            Id = i,
+            Name = "Filler: " + i,
+            ShortDescription = "Das ist ein Filler-Plugin ohne Funktion. Das ist Filler: " + i,
+            Version = "0.0.0" + i
+            });
+            }
+            pluginliste = x;
+        }
+}

@@ -10,6 +10,8 @@
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
+      "commandLineArgs": "<RunArguments>blazor serve -c $(Configuration)</RunArguments>",
+      "workingDirectory": "C:\\Users\\illin\\Source\\Repos\\Helfo\\Helfo\\Helfo.App",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

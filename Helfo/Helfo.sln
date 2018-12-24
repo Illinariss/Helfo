@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helfo.Core", "Helfo.Core\Helfo.Core.csproj", "{F333F4DF-F3AB-468F-8D7A-2CCC20D0F27A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helfo.App", "Helfo.App\Helfo.App.csproj", "{FD304383-CBC4-4E0F-95F7-A7189D335079}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helfo.App", "Helfo.App\Helfo.App.csproj", "{FD304383-CBC4-4E0F-95F7-A7189D335079}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
